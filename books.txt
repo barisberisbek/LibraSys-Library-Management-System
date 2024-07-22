@@ -1,0 +1,8 @@
+013284737X,Data Structures and Algorithm Analysis in C++,Mark Weiss,F
+0451524934,1984,George Orwell,F
+0385472579,Brave New World,Aldous Huxley,F
+037571457X,The Road,Cormac McCarthy,F
+014044923X,The Odyssey,Homer,T
+1449355730,Learning Python 5th Edition,Mark Lutz,T
+,,,F
+123456,Galip Erbas,Dümen,F
