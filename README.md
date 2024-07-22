@@ -1,99 +1,102 @@
-# LibraSys: Kütüphane Yönetim Sistemi
+# LibraSys: Library Management System
 
-LibraSys, kullanıcı dostu arayüzü ve ileri seviye Python özellikleriyle tasarlanmış, kapsamlı bir kütüphane yönetim sistemidir. Bu uygulama, kütüphanedeki kitapların ve öğrencilerin takibini kolaylaştırır, kitap ödünç alma ve iade işlemlerini etkin bir şekilde yönetir ve kullanıcılara çeşitli arama ve listeleme seçenekleri sunar.
+LibraSys is a comprehensive library management system designed with a user-friendly interface and advanced Python features. This application facilitates the tracking of books and students in the library, efficiently manages book borrowing and returning processes, and offers users various search and listing options.
 
-## İçindekiler
+## Table of Contents
 
-1. [Giriş](#giriş)
-   - [Genel Bakış](#genel-bakış)
-   - [Nasıl Çalıştırılır](#nasıl-çalıştırılır)
-   - [Kullanım](#kullanım)
-2. [Başlatma ve Etkileşim](#başlatma-ve-etkileşim)
-   - [Kullanılan Veri Yapıları](#kullanılan-veri-yapıları)
-   - [Önemli Notlar](#önemli-notlar)
-   - [Dosya Formatları](#dosya-formatları)
-3. [Fonksiyonlar ve Özellikler](#fonksiyonlar-ve-özellikler)
-4. [Fonksiyonlara Genel Bakış](#fonksiyonlara-genel-bakış)
+1. [Introduction](#introduction)
+   - [Overview](#overview)
+   - [How to Run](#how-to-run)
+   - [Usage](#usage)
+2. [Initialization and Interaction](#initialization-and-interaction)
+   - [Data Structures Used](#data-structures-used)
+   - [Important Notes](#important-notes)
+   - [File Formats](#file-formats)
+3. [Functions and Features](#functions-and-features)
+4. [Functions Overview](#functions-overview)
 
-## Giriş
+## Introduction
 
-### Genel Bakış
+### Overview
 
-LibraSys, Python tabanlı bir Kütüphane Yönetim Sistemidir. Kütüphane kaynaklarının etkili yönetimi için kullanıcı dostu bir arabirim sunar.
+LibraSys is a Python-based Library Management System. It provides a user-friendly interface for effective management of library resources.
 
-### Nasıl Çalıştırılır
+### How to Run
 
-1. Projeyi GitHub'dan klonlayın:
-
-git clone https://github.com/kullanici-adiniz/LibraSys.git
+1. Clone the project from GitHub:
+git clone https://github.com/your-username/LibraSys.git
 cd LibraSys
 
-2. Metin dosyalarını ana script ile aynı dizine yerleştirin.
+2. Place the text files in the same directory as the main script.
 
-3. Terminalde şu komutu çalıştırın:
+3. Run the following command in the terminal:
 python main.py
 
-Alternatif olarak:
-- ZIP dosyasını açın ve klasörü PyCharm'a sürükleyip bırakın.
-- PyCharm'da 'play' ikonuna tıklayarak çalıştırın.
+Alternatively:
+- Extract the ZIP file and drag the folder onto PyCharm.
+- Click the 'play' icon in PyCharm to run.
 
-### Kullanım
+### Usage
 
-- Programı başlatın ve menü seçeneklerini takip edin.
-- Kütüphane yönetimi işlemlerini gerçekleştirmek için ilgili sayısal seçimleri girin.
+- Start the program and follow the menu options.
+- Enter the corresponding numerical choices to perform library management operations.
 
-## Başlatma ve Etkileşim
+## Initialization and Interaction
 
-### Kullanılan Veri Yapıları
+### Data Structures Used
 
-- `books`: ISBN numaralarına göre kitap bilgilerini içeren sözlük.
-- `students`: Öğrenci ID'lerine göre öğrenci bilgilerini içeren sözlük.
-- `borrowed_books`: Öğrenci ID'lerine göre ödünç alınan kitapların ISBN'lerini içeren sözlük.
+- `books`: A dictionary containing book information indexed by ISBN numbers.
+- `students`: A dictionary holding student details indexed by unique student IDs.
+- `borrowed_books`: A dictionary mapping student IDs to a list of borrowed book ISBNs.
 
-### Önemli Notlar
+### Important Notes
 
-- Dosya bütünlüğü: `students.txt`, `books.txt` ve `borrowed_books.txt` dosyalarının doğru formatlanması önemlidir.
-- Kullanıcı arayüzü: Program, kolay gezinme sağlayan menü tabanlı bir arayüze sahiptir.
+- File integrity: Proper formatting of `students.txt`, `books.txt`, and `borrowed_books.txt` is crucial.
+- User interface: The program features a menu-based interface for easy navigation.
 
-### Dosya Formatları
+### File Formats
 
-- `students.txt`: Her satır "123456 John Doe" formatında.
-- `books.txt`: Her satır "0385472579,Kitap Adı,Yazar Adı,T/F" formatında.
-- `borrowed_books.txt`: Her satır "123456,013284737X,0385472579" formatında.
+- `students.txt`: Each line follows the format "123456 John Doe".
+- `books.txt`: Each line follows the format "0385472579,Book Title,Author Name,T/F".
+- `borrowed_books.txt`: Each line follows the format "123456,013284737X,0385472579".
 
-## Fonksiyonlar ve Özellikler
+## Functions and Features
 
-1. Tüm kitapları listeleme
-2. Ödünç alınmış kitapları listeleme
-3. Yeni kitap ekleme
-4. Kitap silme (ödünç alınmamışsa)
-5. ISBN ile kitap arama
-6. İsim ile kitap arama
-7. Öğrenciye kitap ödünç verme
-8. Öğrencileri ve ödünç aldıkları kitapları listeleme
+1. List all books in the library
+2. List all checked out books
+3. Add a new book
+4. Delete a book (if not checked out)
+5. Search a book by ISBN
+6. Search a book by name
+7. Check out a book to a student
+8. List all students and their checked-out books
+9. Return checked-out books
+10. List all students
+11. Add a new student
+12. Delete a student
 
-## Fonksiyonlara Genel Bakış
+## Functions Overview
 
-### Kitaplar
-- Tüm kitapları listeleme
-- Ödünç alınmış kitapları listeleme
-- Yeni kitap ekleme
-- Kitap silme
-- ISBN ile arama
-- İsim ile arama
+### Books
+- List all books
+- List checked out books
+- Add new book
+- Delete book
+- Search by ISBN
+- Search by name
 
-### Kitap Ödünç Alma
-- Kitap ödünç verme
-- Kitap iade etme
+### Book Checkout
+- Check out book
+- Return book
 
-### Öğrenciler
-- Öğrencileri ve kitaplarını listeleme
-- Tüm öğrencileri listeleme
-- Öğrenci ekleme
-- Öğrenci silme
+### Students
+- List students and their books
+- List all students
+- Add student
+- Delete student
 
-### Menü Gösterimi ve Giriş
-- Menü gösterme
-- Ana fonksiyon
+### Menu Display and Input
+- Show menu
+- Main function
 
-Bu kütüphane yönetim sistemi, kitapların ve öğrencilerin etkili bir şekilde yönetilmesini sağlar. Kullanıcı dostu arayüzü ve kapsamlı özellikleriyle, kütüphane işlemlerini kolaylaştırır ve verimli hale getirir.
+This library management system ensures effective management of books and students. With its user-friendly interface and comprehensive features, it simplifies and streamlines library operations.
