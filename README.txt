@@ -1,138 +1,99 @@
-										Table of Contents for the Document
-     // 1 \\	
-* Introduction *
- Overview
- How to Run
- Usage
-		// 2 \\
-	** Launch and Interaction **
-	Data Structures Used
-	Important Notes
-	File Formats
-				   // 3 \\	
-			*** Functions and Features ***
-			List all the books in the library
-			List all the books that are checked out
-			Add a new book
-			Delete a book if it is not checked out. If it is checked out, give a warning message only
-			Search a book by ISBN number
-			Search a book by name
-			Check out a book to a student
-			List all the students. If a student checked out books, you should list those books under their names
+# LibraSys: Kütüphane Yönetim Sistemi
 
-						 // 4 \\
-					**** Functions Overview ****
-					Books
-					Book Checkout
-					Students
-					Menu Display and Input
-					Main Function
+LibraSys, kullanıcı dostu arayüzü ve ileri seviye Python özellikleriyle tasarlanmış, kapsamlı bir kütüphane yönetim sistemidir. Bu uygulama, kütüphanedeki kitapların ve öğrencilerin takibini kolaylaştırır, kitap ödünç alma ve iade işlemlerini etkin bir şekilde yönetir ve kullanıcılara çeşitli arama ve listeleme seçenekleri sunar.
 
+## İçindekiler
 
+1. [Giriş](#giriş)
+   - [Genel Bakış](#genel-bakış)
+   - [Nasıl Çalıştırılır](#nasıl-çalıştırılır)
+   - [Kullanım](#kullanım)
+2. [Başlatma ve Etkileşim](#başlatma-ve-etkileşim)
+   - [Kullanılan Veri Yapıları](#kullanılan-veri-yapıları)
+   - [Önemli Notlar](#önemli-notlar)
+   - [Dosya Formatları](#dosya-formatları)
+3. [Fonksiyonlar ve Özellikler](#fonksiyonlar-ve-özellikler)
+4. [Fonksiyonlara Genel Bakış](#fonksiyonlara-genel-bakış)
 
+## Giriş
 
+### Genel Bakış
 
-// 1 \\
+LibraSys, Python tabanlı bir Kütüphane Yönetim Sistemidir. Kütüphane kaynaklarının etkili yönetimi için kullanıcı dostu bir arabirim sunar.
 
-Library Management System
-This Python-based Library Management System provides a versatile platform for efficient management of books, students, and book borrowing within a library context.
+### Nasıl Çalıştırılır
 
-Overview
-The program employs Python's capabilities to provide a user-friendly interface for managing library resources effectively. 
+1. Projeyi GitHub'dan klonlayın:
 
-How to Run
-***Ensure TXTs in the Same Directory: Place the text files books.txt, students.txt, and borrowed_books.txt in the same directory as the main script mylibrary.py.
-***Execution: Open a terminal or command prompt, navigate to the project directory, and execute the program using:"python main.py" 
+git clone https://github.com/kullanici-adiniz/LibraSys.git
+cd LibraSys
 
-                                                  OR
+2. Metin dosyalarını ana script ile aynı dizine yerleştirin.
 
-***Extract the folder inside the compressed zip file downloaded via DYS.
-***To open the project, simply drag and drop the folder onto the PyCharm IDE icon. This action will initiate the project setup.
-***Once the project is opened in PyCharm, navigate to the 'play' icon and click 'run.' The user interface will guide you through the available menu options.
+3. Terminalde şu komutu çalıştırın:
+python main.py
 
+Alternatif olarak:
+- ZIP dosyasını açın ve klasörü PyCharm'a sürükleyip bırakın.
+- PyCharm'da 'play' ikonuna tıklayarak çalıştırın.
 
+### Kullanım
 
+- Programı başlatın ve menü seçeneklerini takip edin.
+- Kütüphane yönetimi işlemlerini gerçekleştirmek için ilgili sayısal seçimleri girin.
 
+## Başlatma ve Etkileşim
 
-// 2 \\
+### Kullanılan Veri Yapıları
 
-Usage
-*Launch the program as instructed above.
-*Interact with the menu system by entering corresponding numeric choices to execute various library management operations.
-*Utilize the provided functionalities to manage books, students, borrowing, and returns efficiently within the library.
+- `books`: ISBN numaralarına göre kitap bilgilerini içeren sözlük.
+- `students`: Öğrenci ID'lerine göre öğrenci bilgilerini içeren sözlük.
+- `borrowed_books`: Öğrenci ID'lerine göre ödünç alınan kitapların ISBN'lerini içeren sözlük.
 
+### Önemli Notlar
 
-Data Structures Used
-*books: A dictionary structure containing book information indexed by ISBN numbers.A dictionary storing book information with ISBN as keys and book details as values.
-*students: A dictionary structure holding student details indexed by unique 6-digit student IDs.A dictionary holding student information with student IDs as keys and corresponding details as values.
-*borrowed_books: A dictionary mapping student IDs to a list of borrowed book ISBNs.A dictionary storing information about books borrowed by students, using student IDs as keys and lists of borrowed book ISBNs as values.
+- Dosya bütünlüğü: `students.txt`, `books.txt` ve `borrowed_books.txt` dosyalarının doğru formatlanması önemlidir.
+- Kullanıcı arayüzü: Program, kolay gezinme sağlayan menü tabanlı bir arayüze sahiptir.
 
+### Dosya Formatları
 
-Important Notes
-*File Integrity: Ensure the correct formatting and structure of the students.txt, books.txt, and borrowed_books.txt files for proper functioning of the system.
-*User Interface: The program boasts a user-friendly menu-based interface, ensuring ease of navigation and data input. It clears the screen between user inputs to enhance readability.
+- `students.txt`: Her satır "123456 John Doe" formatında.
+- `books.txt`: Her satır "0385472579,Kitap Adı,Yazar Adı,T/F" formatında.
+- `borrowed_books.txt`: Her satır "123456,013284737X,0385472579" formatında.
 
+## Fonksiyonlar ve Özellikler
 
+1. Tüm kitapları listeleme
+2. Ödünç alınmış kitapları listeleme
+3. Yeni kitap ekleme
+4. Kitap silme (ödünç alınmamışsa)
+5. ISBN ile kitap arama
+6. İsim ile kitap arama
+7. Öğrenciye kitap ödünç verme
+8. Öğrencileri ve ödünç aldıkları kitapları listeleme
 
-File Formats
-*students.txt: This file comprises lines containing a 6-digit ID, followed by the student's first and last name, separated by spaces. For instance: 	123456 John Doe
-*books.txt: This file contains lines with book details, each separated by commas. Each line follows the format: ISBN number, book name, author name, and a checked field denoted by 'T' for true (if the book is checked out) or 'F' for false (if the book is available). For instance: 	0385472579,Book Title,Author Name,T
-*borrowed_books.txt: This file contains information about books borrowed by students. Each line represents a student's borrowing record, consisting of the student's 6-digit ID followed by a list of borrowed book ISBNs, separated by commas.
-For example 123456,013284737X,0385472579
+## Fonksiyonlara Genel Bakış
 
+### Kitaplar
+- Tüm kitapları listeleme
+- Ödünç alınmış kitapları listeleme
+- Yeni kitap ekleme
+- Kitap silme
+- ISBN ile arama
+- İsim ile arama
 
-// 3 \\
+### Kitap Ödünç Alma
+- Kitap ödünç verme
+- Kitap iade etme
 
+### Öğrenciler
+- Öğrencileri ve kitaplarını listeleme
+- Tüm öğrencileri listeleme
+- Öğrenci ekleme
+- Öğrenci silme
 
-Functions and Features
+### Menü Gösterimi ve Giriş
+- Menü gösterme
+- Ana fonksiyon
 
-1)List all the books in the library
-The "list_all_books()" function displays a complete list of all books available in the library. It iterates through the "books" dictionary, showing details such as ISBN, book name, author, and the checked status for each book.
-
-2)List all the books that are checked out
-The "list_checked_out_books()" function generates a list of books currently checked out. It scans the "books" dictionary, identifies books with a 'T' (indicating checked out) status, and exhibits their details.
-
-3)Add a new book 
-The "add_new_book()" function facilitates the addition of a new book to the library. It prompts users for the book's ISBN, name, and author. To ensure uniqueness, it checks if the provided ISBN already exists in the library. If the ISBN is unique, the function adds the new book's details to the "books" dictionary. Subsequently, it writes the book's information into the "books.txt" file, preventing duplicate entries and maintaining the library's inventory.
-
-4)Delete a book if it is not checked out. If it is checked out, give a warning message only
-The "delete_book()" function removes a book from the library if it's available (not checked out). It prompts the user to input the book's ISBN and then verifies its existence and checked status. If the book's status is 'F' (indicating it's available), it is deleted from the library. However, if the book is checked out ('T' status), the function displays a warning message, preventing its deletion.
-
-5)Search a book by ISBN number
-The "search_by_isbn()" function enables users to search for a book by its ISBN. By accepting an ISBN input, it checks the "books" dictionary for a match and displays the book's details if found
-
-6)Search a book by name(e.g. if python is entered for a name, you should list all the books where their names contain the word python)
-The functionality for searching by name allows users to find books using a keyword present in the book names. It uses the "search_name.lower()" function to ensure a case-insensitive search. Within a loop, the "search_by_name()" function checks for books containing the provided keyword within their names in the books dictionary.
-
-7)Check out a book to a student.(Hint: This option can take student id and ISBN number as parameters) 
-The "check_out_book()" function allows users to check out a book by providing their student ID along with the book's ISBN. It validates these inputs and, if valid, changes the book's status to 'T' (indicating it's checked out) within the books.txt file. Additionally, it updates the borrowed_books.txt file with the book's ISBN assigned to the respective student ID.
-
-8)List all the students. If a student checked out books, you should list those books under their names.
-The "list_students_and_books()" function lists all students and the books they have checked out. It loops through the "students" dictionary, checks for borrowed books in the "borrowed_books" dictionary, and displays students' details along with any borrowed book information.
-
-
-
-
-// 4 \\
-
-*Books
-List All Books (list_all_books): Displays a list of all books in the library.
-List Checked Out Books (list_checked_out_books): Displays books that are checked out.
-Add New Book (add_new_book): Allows adding a new book to the library.
-Delete Book (delete_book): Removes a book from the library if it's not checked out.
-Search by ISBN (search_by_isbn): Searches for a book by its ISBN number.
-Search by Name (search_by_name): Searches for a book by its name or keyword.
-
-*Book Checkout
-Check Out Book (check_out_book): Allows a student to check out a book.
-Return Book (return_book): Facilitates the return of a checked-out book.
-
-*Students
-List Students and Books (list_students_and_books): Lists all students and their checked-out books.
-List All Students (list_all_students): Displays a list of all students.
-Add Student (add_student): Adds a new student to the library.
-Delete Student (delete_student): Deletes a student from the library and their associated books if any.
-
-*Menu Display and Input
-Show Menu (show_menu): Displays a menu of options for users to interact with the library system.
-Main Function (main): Controls the flow of the program based on user input from the menu.
+Bu kütüphane yönetim sistemi, kitapların ve öğrencilerin etkili bir şekilde yönetilmesini sağlar. Kullanıcı dostu arayüzü ve kapsamlı özellikleriyle, kütüphane işlemlerini kolaylaştırır ve verimli hale getirir.
